@@ -1,17 +1,13 @@
 # Cloudera CDP Administrator Private Cloud Base
 This is a study guide I built while studying to get CDP Administrator  Private Cloud Base (CDP-2001) certification.  I wish it helps to someone interested while having a good time as I did.
 
+This guide has all the documentation needed to achieve the CDP Administrator Private Cloude Base (CDP-2001) Certification, and at the same time it gives you the oportunity to learn all the tecnologies needed to manage a CDP Cluster efficiency following best practices and recommendations from Cloudera.
+
 ## Content
-[Overview](#Overview) \
-[Cloudera Data Platform](./sas/1.Cloudera Data Platform.md) \
+[Cloudera Data Platform](./sas/1.Cloudera%20Data%20Platform.md) 
 [CDP Private Cloud Base](#CDP Private Cloud Base) \
 [Cloudera Manager](#Cloudera Manager) \
 [References](#References) \
-
-#### Overview
-This guide has all the documentation needed to achieve the CDP Administrator Private Cloude Base (CDP-2001) Certification, and at the same time it gives you the oportunity to learn all the tecnologies needed to manage a CDP Cluster efficiency following best practices and recommendations from Cloudera.
-
-
 
 #### CDP Private Cloud Base
 It is an on-premises version of Cloudera Data Platform.  This product is the result of the Cloudera Enterprise Data Hub and Hortonworks Data Platform (HDP) combination along with some new features and improvements.  
