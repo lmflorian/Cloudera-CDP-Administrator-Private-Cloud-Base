@@ -5,8 +5,8 @@ This is a study guide I built while studying to get CDP Administrator  Private C
 [Overview](#Overview) \
 [Cloudera Data Platform](#Cloudera Data Platform) \
 [CDP Private Cloud Base](#CDP Private Cloud Base) \
-[Cloudera Manager](#Cloudera Manager)
-[References](#References)
+[Cloudera Manager](#Cloudera Manager) \
+[References](#References) \
 
 #### Overview
 This guide has all the documentation needed to achieve the CDP Administrator Private Cloude Base (CDP-2001) Certification, and at the same time it gives you the oportunity to learn all the tecnologies needed to manage a CDP Cluster efficiency following best practices and recommendations from Cloudera.
