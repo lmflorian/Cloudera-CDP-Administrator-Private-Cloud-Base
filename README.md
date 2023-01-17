@@ -2,9 +2,9 @@
 This is a study guide I built while studying to get CDP Administrator  Private Cloud Base (CDP-2001) certification.  I wish it helps to someone interested while having a good time as I did.
 
 ## Content
-[Overview](#Overview)
-[Cloudera Data Platform](#Cloudera Data Platform)
-[CDP Private Cloud Base](#CDP Private Cloud Base)
+[Overview](#Overview) \
+[Cloudera Data Platform](#Cloudera Data Platform) \
+[CDP Private Cloud Base](#CDP Private Cloud Base) \
 [References](#References)
 
 #### Overview
