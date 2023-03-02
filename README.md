@@ -152,9 +152,7 @@ Cloudera Runtime is the core open-source software distribution within CDP that C
 	| Hive Metastore (HMS)		| It is the metadata information for hive/impala tables				|
 	| Apache Oozie				| A workflow scheduler										|
 	| Apache Parquet			| Columnar storage format	|
-	| Apache Spark				| Compute engine used for ETL, ML and stream processing	|
-	| Apache Sqoop	| Is the way for us to pull data out of structure data sources like database management systems (Oracle, MySQL, etc) and bring that data from those sources into our cluster	|
-	| YARN	| Job scheduling and cluster resource management	|
+
 
 
 [Back to top :arrow_up:](#table-of-contents)
