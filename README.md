@@ -16,8 +16,10 @@ Table of Contents
 **Cloudera Manager** 
 -	[Cloudera Manager](#Cloudera-Manager) 
 
-**References**
+**Legal**
 -	[References](#References) 
+-	[Disclaimer](#Disclaimer)
+-	[License](#License)
 
 Cloudera Data Platform
 --------------------------
@@ -60,4 +62,10 @@ References
 -------------
 [docs.cloudera.com](https://docs.cloudera.com) 
 
+Disclaimer
+------------
+The author of this content cannot guarantee the validity of the information found here. Please make sure that you understand that the information provided here is being provided freely, and that no kind of agreement or contract is created between you and any persons associated with this content or project. The authors and contributors do not assume and hereby disclaim any liability to any party for any loss, damage, or disruption caused by errors or omissions in the information contained in, associated with, or linked from this content, whether such errors or omissions result from negligence, accident, or any other cause.
 
+License
+---------
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
