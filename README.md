@@ -144,15 +144,29 @@ Cloudera Runtime is the core open-source software distribution within CDP that C
 
 -	**What CDP includes "out of the box"?**
 
-| Component				| Description													|
-	| 		:-----        			|  :---													|
+	| Component	| Description	|
+	| ---------------	| ----------------	|
 	| Apache Hadoop    			| Distributed batch processing of large datasets       				| 
 	| Apache HBase   			| NoSQL database, sits on top of HDFS (Hadoop Distributed File System) so it gains the fault tolerance HDFS gives it, but is for structured storage of very large tables	|
 	| Apache Hive				| Is the data warehouse, summarization and had-hoc querying tool		|
 	| Hive Metastore (HMS)		| It is the metadata information for hive/impala tables				|
 	| Apache Oozie				| A workflow scheduler										|
 	| Apache Parquet			| Columnar storage format	|
-
+	| Apache Spark				| Compute engine used for ETL, ML and stream processing	|
+	| Apache Sqoop	| Is the way for us to pull data out of structure data sources like database management systems (Oracle, MySQL, etc) and bring that data from those sources into our cluster	|
+	| YARN	| Job scheduling and cluster resource management	|
+	| Apache Zookeeper	| Coordination service for distributed applications	|
+	| Apache Atlas		| Metadata Management and governance and data catalog	|
+	| Apache Phoenix	| OLTP, a real SQL access of large data	|
+	| Apache Ranger	| Manage security on our data	|
+	| Apache ORC		| Columnar storage format for hadoop	|
+	| Apache Tez		| The framework for running hive queries	|
+	| Apache Avro		| Data serialization system			|
+	| Hue			| SQL workbench for data warehouses	|
+	| Apache Impala	| Distributed MPP SQL engine, very fast engine for data	|
+	| Apache Kudu		| The column oriented data store	|
+	| Apache Solr		| Enterprise search platform	|
+	| Apache Kafka		| A real time streaming data pipelines and applications	|
 
 
 [Back to top :arrow_up:](#table-of-contents)
