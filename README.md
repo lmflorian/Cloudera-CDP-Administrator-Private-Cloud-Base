@@ -16,6 +16,7 @@ Table of Contents
 **Specific topics** 
 -	[Cloudera Manager](#Cloudera-Manager) 
 -	[CDP Installation](#CDP-Installation)
+-	[Cloudera Runtime](#Cloudera-Runtime)
 
 **Legal**
 -	[References](#References) 
@@ -84,7 +85,7 @@ We are going to use Java applications during the installation, for this reason i
 
 Transport Layer Security (TLS) is a cryptographic protocol designed to provide communications security over a computer network. [Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security)
 
-This protocol gives you security over our cluster, e.g., avoid that malicious host installing a Cloudera Manager Agent and joining to our cluster.
+This protocol gives you security over our cluster, e.g., avoid a malicious host installing a Cloudera Manager Agent and joining to our cluster.
 
 We can configure TLS manually using your certificate authority or automatically with Auto-TLS (Recommended by Cloudera).
 
@@ -96,13 +97,66 @@ We can configure TLS manually using your certificate authority or automatically 
 
 Ones we have the repositories ready, we proceed to install CM.  Cloudera Manaager (CM) is installed on the Cloudera Manager Server host.  This is an example of the command using RHEL as OS.
 
-> $ sudo yum install cloudera-manager-daemons cloudera-manager-agent cloudera-manager-server
+```
+sudo yum install cloudera-manager-daemons cloudera-manager-agent cloudera-manager-server
+```
+
+**Install and configure Databases**
+
+We are going to need internal or external databases to store the metadata of these services:
+
+-	CM Server
+-	Oozie Server
+-	Sqoop Server
+-	Reports Manager
+-	Hive Metastore Server
+-	Hue Server
+-	Ranger
+-	Schema Registry
+-	Streams Messaging Manager
+
+	**Command to setup CM Database**
+	
+```
+sudo yum install cloudera-manager-daemons cloudera-manager-agent cloudera-manager-server
+```
+
+**Install CDP Runtime and other software**
+
+In this step we are going to need CDP Runtime and parcels to install the services to be used in our cluster.
+
+
+**Set up a cluster using the wizard**
+
+The wizard is going to guide us through all the installation process.  It's very friendly and easy to use.
+
+
+Cloudera Runtime
+---------------------
+
+Cloudera Runtime is the core open-source software distribution within CDP that Cloudera maintains, supports, versions, and packages as a single entity. Cloudera Runtime includes multiple open-source projects, including Apache components, connectors and encryption components, and other components from Cloudera. These components constitute the core distribution of data management tools within CDP.  [Dell](https://infohub.delltechnologies.com/l/white-paper-data-management-with-cloudera-data-platform-on-dell-infrastructure-1/cdp-private-cloud-base-components-3)
+
+-	**Does not include:**
+	-	Cloud services like Data Hub, DWX and MLX
+	-	Management Console, Workload Manager and Replication Manager
+	-	Data Catalog
+	-	Add-on products such as CDSW, CDF, Cloudera DataFlow, etc.
+
+-	**What CDP includes "out of the box"?**
+
+	| Component			| Description			|
+	| :---        				|   				---:	|
+	| Apache Hadoop    		| Distributed batch processing of large datasets       			| 
+	| Apache HBase   		| NoSQL database, sits on top of HDFS (Hadoop Distributed File System) so it gains the fault tolerance HDFS gives it, but is for structured storage of very large tables	|
+	| Apache Hive
+
 
 [Back to top :arrow_up:](#table-of-contents)
 
 References
 -------------
 [docs.cloudera.com](https://docs.cloudera.com) 
+[infohub.delltechnologies.com](https://infohub.delltechnologies.com)
 
 Disclaimer
 ------------
