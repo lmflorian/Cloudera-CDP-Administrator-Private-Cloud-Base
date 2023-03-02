@@ -144,11 +144,17 @@ Cloudera Runtime is the core open-source software distribution within CDP that C
 
 -	**What CDP includes "out of the box"?**
 
-	| Component				| Description			|
-	| 		:-----        			|  :---				|
-	| Apache Hadoop    			| Distributed batch processing of large datasets       			| 
+| Component				| Description													|
+	| 		:-----        			|  :---													|
+	| Apache Hadoop    			| Distributed batch processing of large datasets       				| 
 	| Apache HBase   			| NoSQL database, sits on top of HDFS (Hadoop Distributed File System) so it gains the fault tolerance HDFS gives it, but is for structured storage of very large tables	|
-	| Apache Hive				| 		|
+	| Apache Hive				| Is the data warehouse, summarization and had-hoc querying tool		|
+	| Hive Metastore (HMS)		| It is the metadata information for hive/impala tables				|
+	| Apache Oozie				| A workflow scheduler										|
+	| Apache Parquet			| Columnar storage format	|
+	| Apache Spark				| Compute engine used for ETL, ML and stream processing	|
+	| Apache Sqoop	| Is the way for us to pull data out of structure data sources like database management systems (Oracle, MySQL, etc) and bring that data from those sources into our cluster	|
+	| YARN	| Job scheduling and cluster resource management	|
 
 
 [Back to top :arrow_up:](#table-of-contents)
