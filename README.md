@@ -11,8 +11,12 @@ Table of Contents
 
 **General Concepts**
 -	[Cloudera Data Platform](#Cloudera-Data-Platform) 
--	[CDP Private Cloud Base](#CDP-Private-Cloud-Base) 
--	[Cloudera Manager](#Cloudera Manager) 
+-	[CDP Private Cloud Base](#CDP-Private-Cloud-Base)
+
+**Cloudera Manager** 
+-	[Cloudera Manager](#Cloudera-Manager) 
+
+**References**
 -	[References](#References) 
 
 Cloudera Data Platform
@@ -36,17 +40,21 @@ When installing a CDP Private Cloud Base cluster, you install a single parcel ca
 
 In addition to the Cloudera Runtime components, CDP Private Cloud Base includes powerful tools to help manage, govern, and secure your cluster, like Apache Atlas, Apache Ranger, Apache Spark, Apache Zookeeper, etc.  CDP also includes a powerful tool to manage one or more clusters and their configuration, and also, monitor cluster performance of the clusters and their services. This tool is called Cloudera Manager.
 
-#### Cloudera Manager
-As mentioned before, this tools is used to manage the clusters and their services, but you can also use Cloudera Manager to manage installations, upgrades, maintanance workflows, encryption, access controls, and replication.
+Cloudera Manager
+--------------------
 
-#### Before installing Cloudera Manager
-**- Pre-install consideratons**
-	- Create a plan for storage space.  This plan should consider logs, configuration files and data to be stored in HDFS.
-	- Configure network names.  This must be configure in DNS and /etc/hosts to a better performance.
-	- Disabled firewall for each host in the cluster
-	- Temporarily disable SE Linux
-	- Enable NTP service.  Not configuring this step might cause several sincronization problems.
-	- Configure parcel repositories.  This can be local or remote repositories.
+As mentioned before, this tools is used to manage the clusters and their services, but you can also use Cloudera Manager to execute installations, upgrades, maintanance workflows, encryption, access controls, and replication.
+
+### Before installing Cloudera Manager
+
+**Pre-install consideratons**
+
+-	Create a plan for storage space.  This plan should consider logs, configuration files and data to be stored in HDFS.
+-	Configure network names.  This must be configure in DNS and /etc/hosts to a better performance.
+-	Disabled firewall for each host in the cluster
+-	Temporarily disable SE Linux
+-	Enable NTP service.  Not configuring this step might cause several sincronization problems.
+-	Configure parcel repositories.  This can be local or remote repositories.
 
 [Back to top :arrow_up:](#table-of-contents)
 
