@@ -13,8 +13,9 @@ Table of Contents
 -	[Cloudera Data Platform](#Cloudera-Data-Platform) 
 -	[CDP Private Cloud Base](#CDP-Private-Cloud-Base)
 
-**Cloudera Manager** 
+**Specific topics** 
 -	[Cloudera Manager](#Cloudera-Manager) 
+-	[CDP Installation](#CDP-Installation)
 
 **Legal**
 -	[References](#References) 
@@ -54,7 +55,48 @@ As mentioned before, this tools is used to manage the clusters and their service
 -	Disabled firewall for each host in the cluster
 -	Temporarily disable SE Linux
 -	Enable NTP service.  Not configuring this step might cause several sincronization problems.
--	Configure parcel repositories.  This can be local or remote repositories.
+-	Configure parcel repositories.  This can be local or remote repositories, it depends if you have a temporal or permanent internet access.
+
+CDP Installation
+--------------------
+
+**Configure repositories**
+
+We are going to need to configure a local or public repository, and it will be saved at */etc/yum.repos.d/*.  Repositories for Cloudera Manager (CM) and CDP Runtime are necessary.  Also, we need to have an active subscription of our Operating System to update and install some dependencies.
+
+**Install JDK**
+
+The Java Development Kit (JDK) is a distribution of Java Technology by Oracle Corporation. It implements the Java Language Specification (JLS) and the Java Virtual Machine Specification (JVMS) and provides the Standard Edition (SE) of the Java Application Programming Interface (API). It is derivative of the community driven OpenJDK which Oracle stewards. It provides software for working with Java applications. [Wikipedia](https://en.wikipedia.org/wiki/Java_Development_Kit)
+
+We are going to use Java applications during the installation, for this reason it is extreamly important to install JDK.  We can install it manually or let the Cloudera Manager Wizard install it for us.  In any case, it is importat to remember that we need to install it on all cluster hosts.
+
+-	**Supported JDKs for CDP Private Cloud Base 7.1.x**
+	-	OpenJDK 1.8
+	-	OpenJDK 11
+	-	Oracle JDK 1.8
+
+-	**Requirements** 
+	-	It must be 64 bits
+	-	The same version on each host
+	-	Must be installed at */usr/java/jdk-version*
+
+**Enable Auto-TLS (Recommended)**
+
+Transport Layer Security (TLS) is a cryptographic protocol designed to provide communications security over a computer network. [Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security)
+
+This protocol gives you security over our cluster, e.g., avoid that malicious host installing a Cloudera Manager Agent and joining to our cluster.
+
+We can configure TLS manually using your certificate authority or automatically with Auto-TLS (Recommended by Cloudera).
+
+-	**Benefits of Auto-TLS**
+	-	Auto-TLS automates the creation of an internal certificate authority (CA).
+	-	All hosts and services will automatically have TLS configured and enabled.	
+
+**Install Cloudera Manager**
+
+Ones we have the repositories ready, we proceed to install CM.  Cloudera Manaager (CM) is installed on the Cloudera Manager Server host.  This is an example of the command using RHEL as OS.
+
+> $ sudo yum install cloudera-manager-daemons cloudera-manager-agent cloudera-manager-server
 
 [Back to top :arrow_up:](#table-of-contents)
 
