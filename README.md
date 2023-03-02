@@ -145,7 +145,7 @@ Cloudera Runtime is the core open-source software distribution within CDP that C
 -	**What CDP includes "out of the box"?**
 
 	| Component			| Description			|
-	| :---        				|   				---:	|
+	| 	:---:        			|  :---				|
 	| Apache Hadoop    		| Distributed batch processing of large datasets       			| 
 	| Apache HBase   		| NoSQL database, sits on top of HDFS (Hadoop Distributed File System) so it gains the fault tolerance HDFS gives it, but is for structured storage of very large tables	|
 	| Apache Hive
