@@ -10,17 +10,29 @@ Table of Contents
 --------------------
 
 **General Concepts**
--	[Cloudera Data Platform](./sas/1.Cloudera%20Data%20Platform.md) 
--	[CDP Private Cloud Base](#CDP Private Cloud Base) 
-[Cloudera Manager](#Cloudera Manager) 
-[References](#References) 
+-	[Cloudera Data Platform](#Cloudera-Data-Platform) 
+-	[CDP Private Cloud Base](#CDP-Private-Cloud-Base) 
+-	[Cloudera Manager](#Cloudera Manager) 
+-	[References](#References) 
+
+Cloudera Data Platform
+--------------------------
+
+"Cloudera Data Platform (CDP) is a hybrid data platform designed for unmatched freedom to choose—any cloud, any analytics, any data.
+
+CDP delivers faster and easier data management and data analytics for data anywhere, with optimal performance, scalability, and security.
+
+With CDP you get the value of CDP Private Cloud and CDP Public Cloud for faster time to value and increased IT control." ([Cloudera](https://www.cloudera.com/products/cloudera-data-platform.html))
+
+In this guide we are focusing in CDP Private Cloud only.  But in cloudera docs you can find information about Public Cloud.
+
 
 CDP Private Cloud Base
 --------------------------
 
 It is an on-premises version of Cloudera Data Platform.  This product is the result of the Cloudera Enterprise Data Hub and Hortonworks Data Platform (HDP) combination along with some new features and improvements.  
 
-When installing a CDP Private Cloud Base cluster, you install a single parcel called Cloudera Runtime that contains all of the components. For a complete list of the included components, see [Cloudera Runtime Component Versions](https://docs.cloudera.com/cdp-private-cloud-base/7.1.8/runtime-release-notes/topics/rt-pvc-runtime-component-versions.html) Cloudera Runtime Component Versions.
+When installing a CDP Private Cloud Base cluster, you install a single parcel called Cloudera Runtime that contains all of the components. For a complete list of the included components, see [Cloudera Runtime Component Versions](https://docs.cloudera.com/cdp-private-cloud-base/7.1.8/runtime-release-notes/topics/rt-pvc-runtime-component-versions.html).
 
 In addition to the Cloudera Runtime components, CDP Private Cloud Base includes powerful tools to help manage, govern, and secure your cluster, like Apache Atlas, Apache Ranger, Apache Spark, Apache Zookeeper, etc.  CDP also includes a powerful tool to manage one or more clusters and their configuration, and also, monitor cluster performance of the clusters and their services. This tool is called Cloudera Manager.
 
@@ -38,7 +50,8 @@ As mentioned before, this tools is used to manage the clusters and their service
 
 [Back to top :arrow_up:](#table-of-contents)
 
-#### References
+References
+-------------
 [docs.cloudera.com](https://docs.cloudera.com) 
 
 
