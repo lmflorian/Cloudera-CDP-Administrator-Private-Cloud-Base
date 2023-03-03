@@ -173,7 +173,7 @@ Cloudera Runtime is the core open-source software distribution within CDP that C
 
 References
 -------------
-[docs.cloudera.com](https://docs.cloudera.com) 
+[docs.cloudera.com](https://docs.cloudera.com) \
 [infohub.delltechnologies.com](https://infohub.delltechnologies.com)
 
 Disclaimer
