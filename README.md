@@ -47,6 +47,18 @@ Cloudera Manager
 
 As mentioned before, this tools is used to manage the clusters and their services, but you can also use Cloudera Manager to execute installations, upgrades, maintanance workflows, encryption, access controls, and replication.
 
+In other words, It is a web application used by administrators to:
+
+-	Add a cluster (s)
+-	Start and stop the cluster
+-	Start and stop services
+-	Manage hosts
+-	Manage cluster resources
+-	Monitor cluster (s)
+-	Configure cluster (s)
+-	Manage users and security 
+-	Upgrade the cluster
+
 ### Before installing Cloudera Manager
 
 **Pre-install consideratons**
@@ -170,6 +182,66 @@ Cloudera Runtime is the core open-source software distribution within CDP that C
 
 
 [Back to top :arrow_up:](#table-of-contents)
+
+Cluster State Management
+-----------------------------
+
+The CM Server maintains the state of the cluster in words of two categories; *Model and Runtime*.  This information is stored in the CM Server Database.
+
+**Model State**
+
+This is how the cluster is supposed to run, where and what configuration is supposed to run within.  For example, if you have a cluster with 15 hosts and each one run datanode daemon.  When you update a configuration, you are updating the model state.
+
+**Runtime State**
+
+It captures the processes, where and what commands are currently running.  The Runtime includes the exact configuration files needed to run a process.
+
+
+Types of hosts
+-----------------------------
+
+There are three types of nodes; Master, Worker and Gateway hosts.
+
+**Master Hosts**
+
+These hosts exist for roles that coordinate or manage a specific service on our cluster.  For example:
+
+-	HDFS NameNode
+-	YARN ResourceManager
+-	Job history servers
+-	Zookeeper 
+
+**Worker Hosts**
+
+These are for roles that do the distributed work for a specific service.  The following are examples of some typical service roles.
+
+- 	HDFS DataNode
+-	YARN NodeManager
+-	Impala Daemons
+
+**Gateway hosts**
+
+These kind of hosts *do not run daemons*, but they do have information needed to provide some kind of service, for example, they can act as a gateway and the gateway role basically allows people outside the cluster to access the cluster itself.
+
+These clusters are sometimes referred to as *edge nodes* or *edge hosts*.
+
+Some typical roles are:
+
+-	HDFS gateway
+-	YARN gateway
+-	Hive gateway
+-	Spark2 gateway
+-	sqoop
+-	Hue server
+-	HiveServer2
+
+Multiple Cluster Management
+--------------------------------
+
+We can have one instance of Cloudera Manager Private Cloud and manage multiple clusters with it.
+
+
+
 
 References
 -------------
