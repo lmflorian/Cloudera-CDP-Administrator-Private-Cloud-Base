@@ -17,6 +17,9 @@ Table of Contents
 -	[Cloudera Manager](#Cloudera-Manager) 
 -	[CDP Installation](#CDP-Installation)
 -	[Cloudera Runtime](#Cloudera-Runtime)
+-	[Cluster State Management](#Cluster-State-Management)
+-	[Types of hosts](#Types-of-hosts)
+-	[Multiple Cluster Management](#Multiple-Cluster-Management)
 
 **Legal**
 -	[References](#References) 
@@ -198,7 +201,7 @@ It captures the processes, where and what commands are currently running.  The R
 
 
 Types of hosts
------------------------------
+-----------------
 
 There are three types of nodes; Master, Worker and Gateway hosts.
 
