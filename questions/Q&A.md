@@ -1,13 +1,11 @@
 # **Cloudera Administrator Questions & Answers**
 
-**1.	Which OS are supported by Cloudera Data Platform?**
+1.	**Which OS are supported by Cloudera Data Platform?**
 	-	**Ans:** Oracle Linux, Redhat and Centos
 	
-	
-**2.	Which platforms database platforms are supported by Cloudera?**
+1.	**Which platforms database platforms are supported by Cloudera?**
 	-	**Ans:**	OracleDB, PostgreSQL, MySQL and MariaDB
 
-
-**3.	W**
+1.	**W**
 	-	**Ans:**	a
 		
