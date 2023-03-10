@@ -62,6 +62,88 @@
 
 21.	**What is the name of worker nodes in Apache Kafka?**
 	-	**Ans:**	Brokers
+
+22.	**What is CDP Private Cloud Base?**
+	-	**Ans:** It is an on-premises version of Cloudera Data Platform.
+
+23.	**CDP Private Cloud Base is the combination of which two products?**
+	-	**Ans:**	Cloudera Enterprise Data Hub and Hortonworks Data Platform (HDP) and of course some new features and improvements.
+	
+24.	**Which are the supported JDKs for CDP Private Cloud Base 7.1.x?**
+	-	**Ans:**	OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8
+
+25.	**What are the requirements of JDK?**
+	-	**Ans:**	It must be 64bits, the same version on each host and must be installed at /usr/java/jdk-version*
+	
+26.	**Mention two benefits of using Auto-TLS**
+	-	**Ans:**	
+	-	Auto-TLS automates the creation of an internal certificate authority (CA).
+	-	All services will automatically have TLS configured and enabled.
+
+27.	**Which services need a database for their own metadata?**
+	-	**Ans:**	
+	-	Cloudera Manager Server
+	-	Oozie Server
+	-	Sqoop Server
+	-	Reports Manager
+	-	Hive Metastore Server
+	-	Hue Server
+	-	Ranger
+	-	Schema Registry
+	-	Streams Messaging Manager
+
+28.	**What is Cloudera Runtime?**
+	-	**Ans:**	It is the core open-source software distribution within CDP that Cloudera maintains, supports, versions, and packages as a single entity.
+	
+29.	**What Cloudera Runtime does not include?**
+	-	**Ans:**	
+	-	Cloud services like Data Hub, DWX and MLX
+	-	Management console, Workload Manager and Replication Manager
+	-	Data Catalog
+	-	Add-on products such as CDSW, CDF, Cloudera DataFlow,etc
+
+30.	**CM Server maintains the state of the cluster in words of two categories, which are they?**
+	-	**Ans:**	Model and Runtime
+
+31.	**What is the Model State**
+	-	**Ans:**	How the cluster is supposed tu run, where and what configuration is supposed to run within.
+	
+32.	**What is Runtime State**
+	-	**Ans:**	It captures the processes, where and what commands are currently running.
+
+33.	**When you update a configuration on 15 datanodes, which state are you updating?**
+	-	**Ans:**	Model state
+
+34.	**Mention four services that should run on a master host**
+	-	**Ans:**
+	-	HDFS NAmeNode
+	-	YARN ResourceManager
+	-	Job History Servers
+	-	Zookeeper
+
+35.	**Mention three roles that run on worker hosts**
+	-	**Ans:**	
+	-	HDFS DataNode
+	-	YARN NodeManager
+	-	Impala Daemons
+
+36.	**Which kind of hosts do not run daemons?**
+	-	**Ans:**	Gateway hosts
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		
+		
 		
 		
 		

@@ -20,6 +20,13 @@ Table of Contents
 -	[Cluster State Management](#Cluster-State-Management)
 -	[Types of hosts](#Types-of-hosts)
 -	[Multiple Cluster Management](#Multiple-Cluster-Management)
+-	[Add a cluster](#Add-a-cluster)
+-	[Usage of Provisionig Tools](#Usage-of-Provisionig-Tools)
+-	[Ansible](#Ansible)
+-	[Configuration Settings](#Configuration-Settings)
+-	[Configuration Levels](#Configuration-Levels)
+-	[Cluster Configuration](#Cluster-Configuration)
+
 
 **Legal**
 -	[References](#References) 
@@ -73,12 +80,23 @@ In other words, It is a web application used by administrators to:
 -	Enable NTP service.  Not configuring this step might cause several sincronization problems.
 -	Configure parcel repositories.  This can be local or remote repositories, it depends if you have a temporal or permanent internet access.
 
+**Configuration Terminology**
+
+-	**Service:**  A set of related components providing a type of hadoop functionality on a cluster.  Examples: YARN, Spark, Hive, etc.
+
+-	**Role:**  An individual component of a service.  Examples: HDFS NameNode, HDFS DataNode, etc.
+
+-	**Role Instance:**  Would be a daemon that runs on a specific host.  For example, a DataNode daemon running on a specific host would be an instance of that role.  For gateway roles, there's no daemon running but usually there's a set of client files or configuration files that are available on those nodes.
+
+-	**Role Group:**  It is a set of roles distributed across multiple hosts with the same configuration.  Example:  A set of DataNode roles with default settings (the same configuration).  Role groups are designed to make configuration management a little bit easier and also we can create our own role group as needed.
+
+
 CDP Installation
 --------------------
 
 **Configure repositories**
 
-We are going to need to configure a local or public repository, and it will be saved at */etc/yum.repos.d/*.  Repositories for Cloudera Manager (CM) and CDP Runtime are necessary.  Also, we need to have an active subscription of our Operating System to update and install some dependencies.
+We are going to need to configure a local or public repository, and it will be saved at */etc/yum.repos.d/.  Repositories for Cloudera Manager (CM) and CDP Runtime are necessary.  Also, we need to have an active subscription of our Operating System to update and install some dependencies.
 
 **Install JDK**
 
@@ -242,6 +260,111 @@ Multiple Cluster Management
 --------------------------------
 
 We can have one instance of Cloudera Manager Private Cloud and manage multiple clusters with it.
+
+
+Add a cluster
+---------------
+
+As we mentioned before, we can add multiple clusters using our same CM instance.  When adding a cluster we are going to need this following information.
+
+-	Cluster Name
+-	Cluster type	
+	-	CM will ask for this when we are adding a 2nd, 3th and subsquent cluster
+	-	Our first cluster is going to be *Regular* type by default and we do not have a choice here.
+	
+**Cluster types**
+
+After the first cluster we can also do a **regular cluster** which has storage nodes and compute nodes and all the services available, or we can install a **compute cluster** which consists of only the compute nodes.  In this case you would connect to some kind of existing storage, existing metadata, existing security services, so that compute cluster would only be responsible for computation which means we can tune the cluster just for that one service.
+
+Usage of Provisionig Tools
+-----------------------------
+
+Managing the provisioning of servers can be very costly, for this reason we usually use a product like ansible that helps with automate provisioning, configuration management, and application deployment.
+
+Ansible has the advantage to be an open-source tool.
+
+Ansible
+--------
+
+Ansible is an open source community project sponsored by Red Hat, it's the simplest way to automate IT. Ansible is the only automation language that can be used across entire IT teams from systems and network administrators to developers and managers [ansible.com](https://www.ansible.com).
+
+Here are some key point of Ansible:
+-	It is NOT a server-agent architecture, everything works through ssh.
+-	It works through JSON files and can therefore be written in any programming language.
+-	It is constructed into roles, playbooks and tasks.
+-	Ansible can also use YAML files to ensure flexibility and modular code development.
+-	With CDP, Ansible provides a fully end-to-end, production ready deployment
+	-	It installs the requiere OS packages and configs
+	-	Installs and prepares supporting infrastructures (Databases, Kerberos, TLS, etc)
+	-	Deploys CDP Private Coud Base clusters
+	-	Enables security, encryption and High Availability (HA)
+	-	Schedules CDP to spin up or down data hubs and experiences
+	-	Adds local config, datasets and apps
+	
+As you can see, it can REALLY automates our implementation.
+
+
+Configuration Settings
+------------------------
+
+Cloudera actually auto-configs some initial values for the *role groups* when we create a cluster.  They may not be the Apache default values though may override any of these values.
+
+Configuration Levels
+----------------------
+
+We can override initial property settings and can be set at different levels as follow.
+
+-	Service
+-	Role group
+-	Role instance
+
+The settings are *inherited* from higher levels and the order of priority goes from lowest to highest, like this:  Service -> Role group -> Role instance
+
+It means that anything set at the service is inherited by the *Role Group*, and *Role Instance* settings override *Role Group* and *Service* settings.
+
+Cluster Configuration
+-----------------------
+
+There are over 1,800 cluster and service properties that can be configured.  Hidden properties use the cloudera default value that is set within the service parcel or package JAR File.
+
+**Locating a configuration property**
+
+They ways to find a property in the Cloudra Manager are:
+
+-	Writing it on the global search box
+-	Search box on a specific service's config page.
+
+Take note that the blue arrow indicates the current value is not the default.
+
+**Stale configuration**
+
+When there's a change on the configuration of any service.  That change needs to be pushed out to the nodes in the cluster that it applies to, for this reason a modified configuration may require one or both of the following actions:
+
+-	Client redeployment
+-	Role instance restart or refresh
+
+**Advanced configuration snippets (safety values)**
+
+We can use this values to define additonal configurations.  Maybe there is a specify a value and the property does not exit in the service configuration, in that case we create an *advanced configuration snippet* and we finally overide setting for properties not exposed in Cloudra Manager.
+
+**The Cloudera Manager API**
+
+This is used to manage the cluster programmaticaly.  We can deploy a cluster, configure, monitor start and stop services, configure HA and more.
+
+Here are some consideration to use the API:
+
+-	Access using curl or included client libraries
+-	Python or Java clients are recommended
+-	There is a Swagger UI provided for this API
+-	The API accepts HTTP POST, GET, PUT and DELETE methods. It accepts and returns JSON formatted data
+
+We can use the API to automate cluster operations such as:
+
+-	Obtain configuration files
+-	Back up or restore the CM configuration
+-	Automate different process within our cluster
+-	Import/Export CM configuration
+
 
 
 
