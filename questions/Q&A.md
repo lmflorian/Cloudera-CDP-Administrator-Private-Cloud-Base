@@ -129,6 +129,37 @@
 
 36.	**Which kind of hosts do not run daemons?**
 	-	**Ans:**	Gateway hosts
+	
+37.	**One instance of CM Private Cloud can manage multiple clusters**
+	-	**Ans:**	True
+	
+38.	**Which type is going to be the first cluster created on CM?**
+	-	**Ans:**	Regular
+	
+39.	**Which types of clusters we can add after the first one?**
+	-	**Ans:**	Regular or Compute cluster
+	
+40.	**It is a set of roles distributed across multiple hosts with the same configuration**
+	-	**Ans:** Role Group
+	
+36.	**Propierties can be set at which different levels?**
+	-	**Ans:** Service, Role Group and Role Instance
+	
+36.	**Cloudera Manager deploys configuration settings to?**
+	-	**Ans:** Cloudera Manager Agents and they are responsible for deploying those configuration settings.
+	
+36.	**Where are the configuration settings saved after their deployment by the Agents?**
+	-	**Ans:**	The settings are save to local files.
+	
+36.	**Is it true that client and service configuration settings are stored seperately?**
+	-	**Ans:** Yes
+	
+36.	**What is the default location for service daemon configuration files?**
+	-	**Ans:** /var/run/cloudera-scm-agent/process
+	
+36.	** **
+	-	**Ans:**	
+
 
 
 		
