@@ -28,6 +28,10 @@ Table of Contents
 -	[Cluster Configuration](#Cluster-Configuration)
 -	[Services supported by Cloudera Manager but not part of CDP](#Services-supported-by-Cloudera-Manager-but-not-part-of-CDP)
 -	[Install Add-on Service from Parcel](#Install-Add-on-Service-from-Parcel)
+-	[Cluster size](#Cluster-size)
+-	[Removing a host from the cluster](#Removing-a-host-from-the-cluster)
+-	[Multiple Cluster](#Multiple-Cluster)
+-	[HDFS](*HDFS)
 
 
 **Legal**
@@ -406,7 +410,7 @@ Here are the most frecuently tasks to execute by the CM Administrator on Role In
 -	Add additional role instance after the service is created.
 -	Start/stop/restart role instance
 -	Decomission a role instance
-	-	This redmoves the role instance while the cluster is running and without losing data.
+	-	This removes the role instance while the cluster is running and without losing data.
 -	Delete the role
 	-	We'll decommisision it before it deletes it.
 	-	Deleting a gateway role removes the client libraries
@@ -424,7 +428,99 @@ In case we need to use them, we can add them in as add-on service.  These are di
 Install Add-on Service from Parcel
 -------------------------------------
 
+This installation requires a parcel and usually a custome service descriptor (CSD) file that contains the configuration needed to download and manage the new service.  Following we can find the procedure:
+
+-	Place the CSD file in */opt/cloudera/csd* in the Cloudera Manager Server host.
+-	Restart Cloudera Manager Server and the Cloudera Manager Service.  We can restar this last one by actions in the service from Clouderea Manager, and the correct way to restart Cloudera Manager Server is by the following command.
+
+```
+sudo systemctl restart cloudera-scm-server
+```
+-	Then, from Cloudera Manager, go to Parcels to download, distribute and activate the parcel, each step in order.
+
+Cluster size
+-------------
+
+A cluster can run on a single machine.  This scenario is only for testing and developing and it must not be used for production clusters.
+
+Many organizations start with a small cluster and grow it as required, perpahs initially just 8 or 10 hosts and as the volume of data grows, more hosts can easily be added.
+
+We should increase our cluster size when there is a need to increase computation, data storage and memory.
+
+
+Removing a host from the cluster
+------------------------------------
+
+We have to methods to perform this activity, both will decomission and delete host's role instances and remove managed service software, while preserving data directories.
+
+-	Remove it from *Cluster option*
+	-	Keeps the host available to Cloudera Manager
 	
+-	Remove it from *Cloudera Manager Option*
+	-	Cloudera Manager will no longer manage the host
+
+Multiple Cluster
+------------------
+
+When we are working with multiple clusters, these do not need to run the same version of CDP or Cloudera Runtime.  The only thing is that Cloudera Manager need to be equal to or greater that the version that we are adding the cluster for.
+
+Hadoop Data Storage
+------------------------
+
+Cloudera supports different storage platforms
+
+-	**HDFS (Hadoop Distributed File System)**
+	A hierarchical file-based storage
+
+-	**Apache HBase**
+	A NoSQL database buit on top of HDFS, so it gets the fault tolerance built into HDFS
+
+-	**Apache Kudu**
+	Table-based storage for fast processing and SQL Analytics	
+	
+-	**Cloud Storage**
+	S3, Azure or Google
+	
+-	**Ozone**
+	Scalable, redundant and distributed object store for Hadoop.  It basically functions in a containerized environment like Kubernetes and YARN.
+	
+HDFS
+------
+
+The Hadoop Distributed File System (HDFS) is a distributed file system designed to run on commodity hardware. It has many similarities with existing distributed file systems. However, the differences from other distributed file systems are significant. HDFS is highly fault-tolerant and is designed to be deployed on low-cost hardware. HDFS provides high throughput access to application data and is suitable for applications that have large data sets.  [hadoop.apache.org](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) 
+
+HDFS is a Java-based file system for storing large volumes of data. Designed to span large clusters of commodity servers, HDFS provides scalable and reliable data storage.
+
+HDFS forms the data management layer of Apache Hadoop. YARN provides the resource management while HDFS provides the storage.
+
+HDFS is a scalable, fault-tolerant, distributed storage system that works closely with a wide variety of concurrent data access applications. By distributing storage and computation across many servers, the combined storage resource grows linearly with demand.  [docs.cloudera.com](https://docs.cloudera.com/runtime/7.2.10/hdfs-overview/topics/hdfs-overview-of-apache-hdfs.html).
+
+Here are some key concepts to keep in mind.
+
+-	HDFS emulates an OS file system, but it is a virtual file system
+-	It is really just a Java Application based upon Google's File System
+-	Sits on top of native filesystem like ext3, ext4 or xfs
+-	It is designed to provide redundant storage for big data, but to do this on relatively inexpensive industry standard hardware
+-	Data is distributed at load time
+-	We got physical disk storage with a native OS sitting on top of that, and then we've got HDFS, that sits on topo fo our native FS
+
+**Options for accessing HDFS**
+
+-	CLI (Command-Line Interface)
+	-	hdfs dfs (synonym for hadoop fs)
+
+-	Web browser
+	-	Hue
+	-	Cloudera Manager
+	-	NameNode Web UI
+
+-	Other Programs
+	-	NFS Gateway:  Allows a client to mount HDFS as part of the local file system
+	-	JAVA API: Used by MapReduce, Spark, Impala, Hue, Sqoop, and so on
+
+-	RESTful interface
+	-	WebHDFS and HttpFS
+
 
 
 References
