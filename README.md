@@ -423,7 +423,7 @@ Services supported by Cloudera Manager but not part of CDP
 -	Cloudera Data Science Workbench (CDSW)
 -	Apache Sqoop Connectors
 
-In case we need to use them, we can add them in as add-on service.  These are distributed as packages or cloudera manager parcels and they may be provided by Cloudera or by an independent software vender.
+In case we need to use them, we can add them in as add-on service.  These are distributed as packages or cloudera manager parcels and they may be provided by Cloudera or by an independent software vendor.
 
 Install Add-on Service from Parcel
 -------------------------------------
@@ -502,7 +502,7 @@ Here are some key concepts to keep in mind.
 -	Sits on top of native filesystem like ext3, ext4 or xfs
 -	It is designed to provide redundant storage for big data, but to do this on relatively inexpensive industry standard hardware
 -	Data is distributed at load time
--	We got physical disk storage with a native OS sitting on top of that, and then we've got HDFS, that sits on topo fo our native FS
+-	We got physical disk storage with a native OS sitting on top of that, and then we've got HDFS, that sits on top of our native FS
 
 **Options for accessing HDFS**
 
@@ -521,7 +521,24 @@ Here are some key concepts to keep in mind.
 -	RESTful interface
 	-	WebHDFS and HttpFS
 
+**HDFS Features**
 
+-	High read throughput performance
+-	Fault tolerance
+-	Relatively simple centralized management
+	-	Master/worker architecture
+-	Security
+	-	Optionally configured with Kerberos for secure authentication
+-	Optimized for distributed processing
+	-	Data locality
+-	Scability
+	-	We can grow it as big as we need to
+
+**HDFS Characteristics**
+
+-	Fault tolerant to handle component failure
+	-	Failure is inevitable, we just want to be able to handle it when it does happen and HDFS does that.
+-	
 
 References
 -------------
