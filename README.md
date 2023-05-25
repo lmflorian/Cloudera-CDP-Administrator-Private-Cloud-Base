@@ -920,7 +920,7 @@ TEZ
 Hive on Tez
 --------------
 
-![Hive  MapReduce vs Hive on Tez](img/Hive MapReduce vs Hive on Tez.png  "Hive  MapReduce vs Hive on Tez")
+![Hive  MapReduce vs Hive on Tez](https://github.com/lmflorian/Cloudera-CDP-Administrator-Private-Cloud-Base/blob/main/img/Hive%20MapReduce%20vs%20Hive%20on%20Tez.png?raw=true  "Hive  MapReduce vs Hive on Tez")
 
 -	Hive on Tez avoids the writes to HDFS
 -	Tez allows reduce only jobs.  We are able to back those up one after other
