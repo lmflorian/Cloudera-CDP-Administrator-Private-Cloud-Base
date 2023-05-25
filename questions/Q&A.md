@@ -293,69 +293,251 @@
 36.	**It is a named configuration of resources and a policy for scheduling the resources among YARN applications**
 	-	**Ans:**  Dynamic Resource Pool
 	
-36.	****
-	-	**Ans:**
+36.	**With HDFS HA, Active NameNode writes metadata changes to a quorum of JournalNodes.  It means, with HA, edits log is kept on JournalNodes instead of NameNode**
+	-	**Ans:**  True
 	
-36.	****
-	-	**Ans:**
+36.	**In HDFS, Standby NameNode reads from the JournalNodes to stay in sync with the active NameNode**
+	-	**Ans:** True
 	
-36.	****
-	-	**Ans:**
+36.	**Which setting controls the number of threads that listen to requests from clients?**
+	-	**Ans:** dfs.namenode.handler.count 
 
-36.	****
-	-	**Ans:**
+36.	**Which setting indicates the number of volumes to fail before the datanode takes itself offline?**
+	-	**Ans:** dfs.datanode.failed.volumes.tolerated 
 	
-36.	****
-	-	**Ans:**
+36.	**Which setting controls the maximum amount of memory (in bytes) a datanode can use for caching?**
+	-	**Ans:** dfs.datanode.max.locked.memory
 	
-36.	****
-	-	**Ans:**
+36.	**What additional daemons are needed to go to high availability with automatic failover?**
+	-	**Ans:** 
+		-	An additional NameNode
+		-	Failover Controllers
+		-	Journal Nodes
 	
-36.	****
+36.	**After High Availability is enabled, some manual configurations that may be needed include:**
 	-	**Ans:**
+		-	Update the Hive Metastore
+		-	Run invalidate metadata command in Impala Shell
+		-	Add the httpFS role if not already on the cluster
 
-36.	****
-	-	**Ans:**
+36.	**Is it true that distcp turns the copy process into a MapReduce job?**
+	-	**Ans:** True
 	
-36.	****
-	-	**Ans:**
+36.	**What about several distcp copies executions of the same entire directories?**
+	-	**Ans:** Files previously copied will be skipped.  The only check for duplicate files is that the file's name, size, and checksum are identical.
 
-36.	****
+36.	**What is the meaning of every number of CDP version, for example CDP 7.1.6?**
 	-	**Ans:**
+		- 7 = Major version
+		- 1 = Minor update
+		- 6 = maintenance update
 	
-36.	****
-	-	**Ans:**
+36.	**What are the two ways to upgrade CDP?**
+	-	**Ans:**  Parcels and Package
 	
-36.	****
-	-	**Ans:**
+36.	**What is the rule between Cloudera Runtime and CM?**
+	-	**Ans:** CM minor version must be >= Cloudera Runtime minor version
 	
-36.	****
-	-	**Ans:**
+36.	**When we are upgrading cloudera manager agents, how can I determine which packages may be installed or upgraded?**
+	-	**Ans:** yum deplist cloudera-manager-agent
 	
-36.	****
-	-	**Ans:**
+36.	**What command checks for missing or corrupt data blocks?**
+	-	**Ans:** hdfs fsck
 	
-36.	****
-	-	**Ans:**
+36.	**Which of the following commands will get the safemode status of your cluster?**
+	-	**Ans:** hdfs dfsadmin -safemode get 
 
-36.	****
+36.	**What are some reasons to invoke a rebalance of the cluster?**
 	-	**Ans:**
-
-
+		-	Some nodes have much more data on them than others
+		-	A new host is added to the cluster
+		-	You can view the capacities from the NameNode GUI DataNode tab
 		
+36.	**Required steps in moving a host between clusters?**
+	-	**Ans:**
+		-	Decommission the host 
+		-	Remove all roles from the host (except for the Cloudera Manager management roles) 
+		-	Remove the host from the cluster but leave it available to Cloudera Manager 
+		-	Add the host to the new cluster
+	
+36.	**In Monotoring Terminology, what is an Entity?**
+	-	**Ans:** A Cloudera Manager component with metrics associated with it.  Example: clusters, services, roles, and role instances, hosts.
+	
+36.	**In Monotoring Terminology, what is a Metric?**
+	-	**Ans:** A property that can be measured.  Example: RAM Utilization, Total HDFS Storage capacity
+	
+36.	**In Monotoring Terminology, what is a chart?**
+	-	**Ans:** Customizable display aggregated metrics for entities over time
+	
+36.	**In Monotoring Terminology, what is a Dashboard?**
+	-	**Ans:** A page displaying key entity information and charts.  A dashboard consists of a set of charts.
+	
+36.	**What are pass-fail tests?**
+	-	**Ans:** Tests to respond if the things are good or bad
+	
+36.	**What is a canary test**
+	-	**Ans:** It responds if the service is working or not.  It is a kind of pass-fail test
+	
+36.	**What does the metric tests?**
+	-	**Ans:**  They compare a number or value to a threshold.  The result is good, bad or concerning
+	
+36.	**How often fsimage file is automatically updated by default?**
+	-	**Ans:** Every hour or 1 million transactions.
+	
+36.	**What are common source of cluster problems?**
+	-	**Ans:**
+		-	Misconfiguration
+		-	Hardware exhaustion
+		-	Resource exhaustion		
+	
+36.	**What should you do to ensure hostname resolution?**
+	-	**Ans:**	Test forward and reverse DNS lookups
+	
+36.	**Mention an HDFS subcommand**
+	-	**Ans:** getconf
+	
+36.	**What are the import security terms in Cloudera**
+	-	**Ans:** Security, Authentication, Authorization and Encryption
+	
+36.	**Hadoop daemons can use Kerberos to authenticate all remote procedure calls (RPCs)**
+	-	**Ans:** True
+	
+36.	**What are keytab files in Kerberos?**
+	-	**Ans:**
+		-	Stores kerberos principals and associated keys
+		-	Allows non-interactive access to service protected by kerberos
+	
+36.	**Mention an open source application to define, administer, and manage security policies in CDP**
+	-	**Ans:**  Apache Ranger
+	
+36.	**what the phrase "single pane of glass" means for security administrators?**
+	-	**Ans:** One place to go to, one centralized administration area for you security policies
+	
+36.	**Is it true that encryption requires us of Active Directory**
+	-	**Ans:** True
+	
+36.	**Kubernetes is often abbreviated as?**
+	-	**Ans:** k8s
+	
+36.	**Mention 3 trues of Cloud-Native Architecture**
+	-	**Ans:**
+		-	Object stores are the preferred way to store data
+		-	Containers enable more efficient distribution of resources
+		-	Storage and copute can be seperated due to fast networking
+	
+36.	**Is it true in CDP Public Cloud that your data will always run under your control in your VPC**
+	-	**Ans:** Yes, It is true
+	
+36.	**Mention 3 trues about Workload Manager (VXM)**
+	-	**Ans:**
+		-	It will need connectivity to NiFi to ensure all log files flow into it
+		-	It tracks only current statistics at this time; historical metrics are not taken into account
+		-	It cannot be setup on-premises (Cloud only)
+	
+36.	**Mention a true of auto-scaling**
+	-	**Ans:** It enables scaling up or down of virtual warehouse instances
+	
+36.	**What is the recommended disk configuration for a CDP Cluster?**
+	-	**Ans:** JBOD
+	
+36.	**What's the meaning of Fencing in HA HDFS?**
+	-	**Ans:** Isolating a failed NameNode
+	
+36.	**What is the component that will start the Map or Reduce Task?**
+	-	**Ans:** TaskTracker
+	
+36.	**Mention 3 roles that should be on a worker node**
+	-	**Ans:**
+		-	NodeManager
+		-	Impalad	
+		-	Zookeeper
 		
+36.	**Metrics are available on?**
+	-	**Ans:** Hosts, services, roles and instances.
+
+36.	**What roles you need for HDFS HA?**
+	-	**Ans:** 
+		-	Journal
+		-	Failover Controllers
+		-	NameNode (Active)
+		-	NameNode (Standby)
 		
-		
+36.	**What evaluates the Host Inspector?**
+	-	**Ans:**
+		-	Validates OS Settings
+		-	Networking Settings
+		-	System Time
+		-	User and Group Settings
+
+36.	**what are the Ranger Audit Tabs?**
+	-	**Ans:**
+		-	Access
+		-	Admin
+		-	Login sessions
+		-	Plugins
+		-	Plugin status
+		-	User Sync
+
+36.	**What are the Audit Filter Options?**
+	-	**Ans:**
+		-	User
+		-	Application
+		-	Exclude User
+
+36.	**Mention the ways to Rebalance HDFS?**
+	-	**Ans:**
+		-	Shell-script
+		-	CM UI
+
+36.	**What options do you have in HDFS File Browser?**
+	-	**Ans:**
+		-	Utilization Report
+		-	Storage Quotas
+		-	Snapshot Management
 			
-		
-		
-		
-		
-		
-		
-		
-		
-		
+36.	**You can create HBase and HDFS Snapshots**
+	-	**Ans:** True
+	
+36.	**Snapshots can improve data replication performance**
+	-	**Ans:** True
+	
+36.	**You can take snapshots by HDFS Browser or by Snapshot Policies in CM**
+	-	**Ans:** True
+	
+36.	**Which two options do yo have for Alerts delivery**
+	-	**Ans:** Email and SNMP
+	
+36.	**What are the Cloudera Manager External Authentication Types?**
+	-	**Ans:**
+		-	AD
+		-	LDAP
+		-	SAML
+	
+36.	**In Health Tests, services and hosts are noted as?**
+	-	**Ans:**
+		-	Good
+		-	Concerning
+		-	Bad
+	
+36.	**What are the two Ranger types of policy?**
+	-	**Ans:** 
+		-	Resource-based
+		-	Tag-based
+	
+36.	**What are the two CDP options for Data Durability?**
+	-	**Ans:**
+		-	Replication through HDFS
+		-	Erasure Coding (EC)
+	
+36.	**Give the list of Event Types in CM**
+	-	**Ans:**
+		-	Activity_Event
+		-	Audit_Event
+		-	Health_Check
+		-	Log_Message
+	
+36.	**What are the Health Alerts tagas for Threshold?**
+	-	**Ans:** Bad and Concerning	
 		
 		
 		

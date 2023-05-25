@@ -31,8 +31,17 @@ Table of Contents
 -	[Cluster size](#Cluster-size)
 -	[Removing a host from the cluster](#Removing-a-host-from-the-cluster)
 -	[Multiple Cluster](#Multiple-Cluster)
--	[HDFS](*HDFS)
-
+-	[HDFS](#HDFS)
+-	[YARN](#YARN)
+-	[Apache Hadoop MapReduce](#ApacheHadoopMapReduce)
+-	[TEZ](#TEZ)
+-	[Hive on Tez](#Hive-on-Tez)
+-	[Hive 3 Architecture](#Hive-3-Architecture) 
+-	[Hive Upgrade Considerations to CDP](#Hive-Upgrade-Considerations-to-CDP)
+-	[ACID Operations](#ACID-Operations)
+-	[Apache Spark](#Apache-Spark)
+-	[Spark Distributed Processing](#Spark-Distributed-Processing)
+-	[Apache Phoenix](#Apache-Phoenix)
 
 **Legal**
 -	[References](#References) 
@@ -1069,58 +1078,6 @@ Apache Phoenix
 -	Phoenix is a SQL layer for Apache HBase that provides an ANSI SQL interface
 -	Enables software engineers to develop HBase based applications that operationalize big data
 -	You can create and interact with tables in the form of typical DDL/DML statements
-
-
-
-
-
-
-
-
-
-
-		
-
-	
-	
-
-
-
-
-
-
-
-
-
-
-		
-	
-	
-	
-
-
-
-
-
-
-
-	
-	
-
-
-	
-
-	
-
-
-
-
-		
-		
-		
-		
-		
-
 
 
 References
